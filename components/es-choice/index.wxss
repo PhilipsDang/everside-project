@@ -1,0 +1,7 @@
+/* Option borders, the selected state and the type scale come from the design system. */
+@import '../../styles/theme.wxss';
+
+.es-choice__hint {
+  display: block;
+  margin-top: 8rpx;
+}

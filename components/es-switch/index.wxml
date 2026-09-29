@@ -1,0 +1,19 @@
+<view
+  class="es-switch {{checked ? 'is-on' : ''}}"
+  hover-class="is-pressed"
+  hover-start-time="20"
+  hover-stay-time="100"
+  aria-role="switch"
+  aria-checked="{{checked}}"
+  aria-label="{{label}}"
+  bind:tap="onToggle"
+>
+  <view class="es-switch__body">
+    <text class="es-text-heading" aria-role="heading">{{label}}</text>
+    <text wx:if="{{description}}" class="es-text-note es-text-secondary es-switch__description">{{description}}</text>
+  </view>
+  <text class="es-text-note es-switch__state">{{checked ? labels.on : labels.off}}</text>
+  <view class="es-switch__track" aria-hidden="true">
+    <view class="es-switch__knob"></view>
+  </view>
+</view>

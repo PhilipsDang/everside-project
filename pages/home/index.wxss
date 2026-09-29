@@ -1,0 +1,7 @@
+/* The action cards, their colours and the type scale come from the design system. */
+@import '../../styles/theme.wxss';
+
+.es-home__note {
+  display: block;
+  margin-top: 8rpx;
+}

@@ -1,0 +1,2 @@
+/* The button itself is styled by the shared design system. */
+@import '../../styles/theme.wxss';

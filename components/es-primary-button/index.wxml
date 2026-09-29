@@ -1,0 +1,12 @@
+<button
+  class="es-btn es-btn--primary {{block ? '' : 'es-btn--inline'}} {{disabled ? 'is-disabled' : ''}}"
+  disabled="{{disabled}}"
+  hover-class="is-pressed"
+  hover-start-time="20"
+  hover-stay-time="100"
+  aria-role="button"
+  aria-label="{{ariaLabel || text}}"
+  bind:tap="onTap"
+>
+  <text class="es-text-action">{{text}}</text>
+</button>

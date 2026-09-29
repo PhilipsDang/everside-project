@@ -1,0 +1,7 @@
+/* Title sizes and colours come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-page-header__note {
+  display: block;
+  margin-top: 12rpx;
+}

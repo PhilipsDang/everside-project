@@ -1,0 +1,5 @@
+<view class="es-page-header">
+  <text class="es-text-title es-page-header__title" aria-role="heading">{{title}}</text>
+  <text wx:if="{{subtitle}}" class="es-text-body es-page-header__subtitle">{{subtitle}}</text>
+  <text wx:if="{{note}}" class="es-text-note es-text-muted es-page-header__note">{{note}}</text>
+</view>

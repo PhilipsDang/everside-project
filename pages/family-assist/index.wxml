@@ -1,0 +1,35 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content">
+    <es-page-header title="{{copy.title}}" subtitle="{{copy.subtitle}}" />
+
+    <es-card>
+      <text class="es-text-body">{{copy.intro}}</text>
+    </es-card>
+
+    <es-card>
+      <es-status
+        type="empty"
+        title="{{shared.comingSoonTitle}}"
+        description="{{copy.comingSoonBody}}"
+      />
+    </es-card>
+
+    <es-card title="{{shared.todayTipTitle}}" tone="note">
+      <text class="es-text-body">{{copy.todayTip}}</text>
+    </es-card>
+
+    <view class="es-family-assist__action">
+      <es-secondary-button text="{{copy.settingsLabel}}" bind:submit="onOpenSettings" />
+    </view>
+    <view class="es-family-assist__action">
+      <es-primary-button
+        text="{{copy.backLabel}}"
+        aria-label="{{shared.backAriaLabel}}"
+        bind:submit="onBackTap"
+      />
+    </view>
+  </view>
+
+  <es-bottom-nav active="none" />
+</view>
+

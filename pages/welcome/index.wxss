@@ -1,0 +1,65 @@
+/* Type sizes and colours come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-welcome__brand {
+  margin-bottom: 40rpx;
+}
+
+.es-welcome__name {
+  display: block;
+  font-size: 64rpx;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #33302b;
+}
+
+.es-welcome__chinese-name {
+  display: block;
+  margin-top: 8rpx;
+  color: #5d574c;
+}
+
+.es-welcome__tagline {
+  display: block;
+  margin-bottom: 24rpx;
+}
+
+.es-welcome__intro {
+  display: block;
+  margin-bottom: 40rpx;
+}
+
+.es-welcome__actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.es-welcome__action {
+  margin-bottom: 24rpx;
+}
+
+.es-welcome__family {
+  margin-top: 40rpx;
+}
+
+.es-welcome__family-hint {
+  display: block;
+  margin-top: 16rpx;
+}
+
+/* The brand block grows with the extra large text setting. */
+.es-scale-large .es-welcome__name {
+  font-size: 76rpx;
+}
+
+.es-scale-large .es-welcome__chinese-name {
+  font-size: 44rpx;
+}
+
+.es-contrast-high .es-welcome__name {
+  color: #000000;
+}
+
+.es-contrast-high .es-welcome__chinese-name {
+  color: #262626;
+}

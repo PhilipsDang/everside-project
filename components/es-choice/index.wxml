@@ -1,0 +1,21 @@
+<view class="es-choice">
+  <text wx:if="{{label}}" class="es-text-heading" aria-role="heading">{{label}}</text>
+  <text wx:if="{{hint}}" class="es-text-note es-text-secondary es-choice__hint">{{hint}}</text>
+  <view class="es-choice__options" aria-role="radiogroup" aria-label="{{label}}">
+    <view
+      wx:for="{{options}}"
+      wx:key="value"
+      class="es-choice__option {{item.value === value ? 'is-selected' : ''}}"
+      data-value="{{item.value}}"
+      hover-class="is-pressed"
+      hover-start-time="20"
+      hover-stay-time="100"
+      aria-role="radio"
+      aria-checked="{{item.value === value}}"
+      aria-label="{{item.label}}"
+      bind:tap="onSelect"
+    >
+      <text class="es-text-action">{{item.label}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+/* Type sizes, colours and the switch come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-settings__pending {
+  display: block;
+  margin-top: 16rpx;
+}
+
+.es-settings__action {
+  margin-bottom: 24rpx;
+}

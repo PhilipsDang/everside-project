@@ -1,0 +1,81 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content">
+    <es-page-header title="{{copy.title}}" subtitle="{{copy.subtitle}}" />
+
+    <es-card>
+      <es-choice
+        label="{{copy.languageTitle}}"
+        hint="{{copy.languageHint}}"
+        options="{{languageOptions}}"
+        value="{{language}}"
+        bind:change="onLanguageChange"
+      />
+    </es-card>
+
+    <es-card>
+      <es-choice
+        label="{{copy.textScaleTitle}}"
+        hint="{{copy.textScaleHint}}"
+        options="{{textScaleOptions}}"
+        value="{{textScale}}"
+        bind:change="onTextScaleChange"
+      />
+    </es-card>
+
+    <es-card>
+      <es-choice
+        label="{{copy.contrastTitle}}"
+        hint="{{copy.contrastHint}}"
+        options="{{contrastOptions}}"
+        value="{{contrast}}"
+        bind:change="onContrastChange"
+      />
+    </es-card>
+
+    <es-card>
+      <es-switch
+        label="{{copy.spokenGuidanceTitle}}"
+        description="{{copy.spokenGuidanceHint}}"
+        checked="{{spokenGuidance}}"
+        bind:change="onSpokenGuidanceChange"
+      />
+      <text class="es-text-note es-text-muted es-settings__pending">{{copy.spokenGuidancePending}}</text>
+    </es-card>
+
+    <es-card>
+      <es-switch
+        label="{{copy.reduceMotionTitle}}"
+        description="{{copy.reduceMotionHint}}"
+        checked="{{reduceMotion}}"
+        bind:change="onReduceMotionChange"
+      />
+    </es-card>
+
+    <es-card title="{{copy.savedTitle}}" tone="note">
+      <text class="es-text-body">{{copy.savedBody}}</text>
+    </es-card>
+
+    <view class="es-settings__action">
+      <es-secondary-button text="{{copy.resetLabel}}" bind:submit="onResetTap" />
+    </view>
+    <view class="es-settings__action">
+      <es-primary-button
+        text="{{copy.doneLabel}}"
+        aria-label="{{copy.doneAriaLabel}}"
+        bind:submit="onDone"
+      />
+    </view>
+  </view>
+
+  <es-bottom-nav active="settings" />
+
+  <es-dialog
+    visible="{{resetDialogVisible}}"
+    title="{{copy.resetDialogTitle}}"
+    message="{{copy.resetDialogMessage}}"
+    confirm-text="{{copy.resetDialogConfirm}}"
+    cancel-text="{{copy.resetDialogCancel}}"
+    bind:confirm="onResetConfirm"
+    bind:cancel="onResetCancel"
+  />
+</view>

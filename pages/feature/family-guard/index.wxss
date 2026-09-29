@@ -1,0 +1,2 @@
+/* The whole layout of this screen comes from the shared design system. */
+@import '../../../styles/theme.wxss';

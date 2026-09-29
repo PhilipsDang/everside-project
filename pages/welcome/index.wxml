@@ -1,0 +1,49 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content es-page__content--plain es-welcome">
+    <view class="es-welcome__brand">
+      <text class="es-welcome__name" aria-role="heading">{{brand.name}}</text>
+      <text class="es-text-body es-welcome__chinese-name">{{copy.chineseName}}</text>
+    </view>
+
+    <text class="es-text-title es-brand-text es-welcome__tagline">{{brand.tagline}}</text>
+
+    <text class="es-text-body es-welcome__intro">{{copy.intro}}</text>
+
+    <es-card title="{{copy.noticeTitle}}" tone="note">
+      <text class="es-text-body">{{copy.noticeBody}}</text>
+    </es-card>
+
+    <es-card>
+      <es-choice
+        label="{{copy.languageTitle}}"
+        hint="{{copy.languageHint}}"
+        options="{{languageOptions}}"
+        value="{{language}}"
+        bind:change="onLanguageChange"
+      />
+    </es-card>
+
+    <view class="es-welcome__actions">
+      <view class="es-welcome__action">
+        <es-primary-button
+          text="{{copy.startLabel}}"
+          aria-label="{{copy.startAriaLabel}}"
+          bind:submit="onStart"
+        />
+      </view>
+      <view class="es-welcome__action">
+        <es-secondary-button text="{{copy.settingsLabel}}" bind:submit="onOpenSettings" />
+      </view>
+    </view>
+
+    <view class="es-welcome__family">
+      <es-secondary-button text="{{copy.familyAssistLabel}}" bind:submit="onOpenFamilyAssist" />
+      <text class="es-text-note es-text-muted es-welcome__family-hint">{{copy.familyAssistHint}}</text>
+    </view>
+  </view>
+
+  <view class="es-page__footer">
+    <text class="es-text-note es-text-muted">{{brand.previewNote}}</text>
+  </view>
+</view>
+

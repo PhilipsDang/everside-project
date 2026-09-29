@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/welcome/index",
+    "pages/home/index",
+    "pages/feature/check-suspicious-message/index",
+    "pages/feature/daily-tasks/index",
+    "pages/feature/call-help/index",
+    "pages/feature/family-guard/index",
+    "pages/settings/index",
+    "pages/family-assist/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f7f3ec",
+    "navigationBarBackgroundColor": "#f7f3ec",
+    "navigationBarTitleText": "EverSide",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

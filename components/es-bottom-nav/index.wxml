@@ -1,0 +1,24 @@
+<view class="es-bottom-nav">
+  <view
+    class="es-bottom-nav__item {{active === 'home' ? 'is-active' : ''}}"
+    hover-class="is-pressed"
+    hover-start-time="20"
+    hover-stay-time="100"
+    aria-role="link"
+    aria-label="{{active === 'home' ? copy.home.activeLabel : copy.home.label}}"
+    bind:tap="onHomeTap"
+  >
+    <text class="es-text-action">{{copy.home.label}}</text>
+  </view>
+  <view
+    class="es-bottom-nav__item {{active === 'settings' ? 'is-active' : ''}}"
+    hover-class="is-pressed"
+    hover-start-time="20"
+    hover-stay-time="100"
+    aria-role="link"
+    aria-label="{{active === 'settings' ? copy.settings.activeLabel : copy.settings.label}}"
+    bind:tap="onSettingsTap"
+  >
+    <text class="es-text-action">{{copy.settings.label}}</text>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+{
+  "name": "everside",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EverSide - voice-first AI assistance and fraud protection for older adults in China (WeChat Mini Program).",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "npm run format:check && npm run typecheck && npm run check:i18n && npm run validate",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "check:i18n": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-i18n.mjs",
+    "validate": "node scripts/validate-project.mjs"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.2.3",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2"
+  }
+}

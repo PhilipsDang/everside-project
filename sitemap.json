@@ -1,0 +1,9 @@
+{
+  "desc": "EverSide does not use search indexing in this cycle.",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "*"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<view class="es-card {{tone === 'note' ? 'es-card--note' : ''}}">
+  <text wx:if="{{title}}" class="es-text-heading es-card__title" aria-role="heading">{{title}}</text>
+  <text wx:if="{{subtitle}}" class="es-text-note es-card__subtitle">{{subtitle}}</text>
+  <slot />
+</view>

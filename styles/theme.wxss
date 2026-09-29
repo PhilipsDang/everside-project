@@ -1,0 +1,773 @@
+/* =============================================================================
+ * EverSide design system  (Cycle 1)
+ *
+ * This file is the only place where colours, text sizes and interaction states
+ * are defined. Every page and every component imports it, so the four
+ * accessibility preferences always reach the whole screen:
+ *
+ *   .es-scale-large      larger text everywhere
+ *   .es-contrast-high    black on white, stronger borders
+ *   .es-reduce-motion    no transitions, no animation, no pressed scale
+ *
+ * Component and page WXSS files only contain layout. Keep it that way, so the
+ * high contrast mode can never be half applied.
+ *
+ * Sizes use rpx (750rpx = screen width). A 36rpx body size is about 18px on a
+ * standard phone, which is already "large" for a Chinese app.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * 1. Type scale - standard
+ * -------------------------------------------------------------------------- */
+.es-text-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.es-text-heading {
+  font-size: 40rpx;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.es-text-body {
+  font-size: 36rpx;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.es-text-action {
+  font-size: 40rpx;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.es-text-note {
+  font-size: 32rpx;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* -----------------------------------------------------------------------------
+ * 2. Type scale - extra large
+ * -------------------------------------------------------------------------- */
+.es-scale-large .es-text-title {
+  font-size: 58rpx;
+}
+
+.es-scale-large .es-text-heading {
+  font-size: 48rpx;
+}
+
+.es-scale-large .es-text-body {
+  font-size: 44rpx;
+}
+
+.es-scale-large .es-text-action {
+  font-size: 48rpx;
+}
+
+.es-scale-large .es-text-note {
+  font-size: 38rpx;
+}
+
+/* -----------------------------------------------------------------------------
+ * 3. Root: colours for the warm, calm default look
+ * -------------------------------------------------------------------------- */
+.es-root {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #f7f3ec;
+  color: #33302b;
+}
+
+.es-text-secondary {
+  color: #5d574c;
+}
+
+.es-text-muted {
+  color: #6b6559;
+}
+
+.es-surface {
+  background-color: #ffffff;
+  border-color: #e0d8c9;
+}
+
+.es-divider {
+  background-color: #e0d8c9;
+}
+
+.es-brand-text {
+  color: #0f5c55;
+}
+
+.es-brand-soft {
+  background-color: #e7f0ed;
+  color: #0f4a44;
+  border-color: #c6ded8;
+}
+
+/* -----------------------------------------------------------------------------
+ * 4. Root: high contrast
+ * -------------------------------------------------------------------------- */
+.es-contrast-high {
+  color: #000000;
+}
+
+.es-contrast-high.es-root {
+  background-color: #ffffff;
+}
+
+.es-contrast-high .es-text-secondary,
+.es-contrast-high .es-text-muted {
+  color: #262626;
+}
+
+.es-contrast-high .es-surface {
+  background-color: #ffffff;
+  border-color: #000000;
+}
+
+.es-contrast-high .es-divider {
+  background-color: #000000;
+}
+
+.es-contrast-high .es-brand-text {
+  color: #000000;
+}
+
+.es-contrast-high .es-brand-soft {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+/* -----------------------------------------------------------------------------
+ * 5. Buttons - generous touch area, clear pressed and disabled states
+ * -------------------------------------------------------------------------- */
+.es-btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 112rpx;
+  margin: 0;
+  padding: 24rpx 32rpx;
+  border-radius: 20rpx;
+  border: 4rpx solid transparent;
+  text-align: center;
+  /* English labels are longer than Chinese ones: let a long label wrap and
+     grow the button, rather than squeezing it or letting it spill out. */
+  line-height: 1.4;
+  word-break: break-word;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.12s ease;
+}
+
+.es-btn::after {
+  border: none;
+}
+
+.es-btn--inline {
+  width: auto;
+  min-width: 240rpx;
+}
+
+.es-btn--primary {
+  background-color: #0f5c55;
+  color: #ffffff;
+}
+
+.es-btn--secondary {
+  background-color: #ffffff;
+  color: #0f4a44;
+  border-color: #0f5c55;
+}
+
+.es-btn--primary.is-pressed {
+  background-color: #0a4038;
+  transform: scale(0.98);
+}
+
+.es-btn--secondary.is-pressed {
+  background-color: #e3efec;
+  transform: scale(0.98);
+}
+
+.es-btn.is-disabled,
+.es-btn.is-disabled.is-pressed {
+  background-color: #e6e0d6;
+  color: #8d867a;
+  border-color: #e6e0d6;
+  opacity: 1;
+  transform: none;
+}
+
+.es-contrast-high .es-btn--primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.es-contrast-high .es-btn--secondary {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+.es-contrast-high .es-btn--primary.is-pressed {
+  background-color: #262626;
+}
+
+.es-contrast-high .es-btn--secondary.is-pressed {
+  background-color: #d9d9d9;
+}
+
+.es-contrast-high .es-btn.is-disabled,
+.es-contrast-high .es-btn.is-disabled.is-pressed {
+  background-color: #ffffff;
+  color: #595959;
+  border-color: #595959;
+}
+
+/* -----------------------------------------------------------------------------
+ * 6. Home screen action cards - one big, obvious target each
+ * -------------------------------------------------------------------------- */
+.es-action {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 28rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  border: 4rpx solid #e0d8c9;
+  background-color: #ffffff;
+  text-align: left;
+  transition:
+    background-color 0.15s ease,
+    transform 0.12s ease;
+}
+
+.es-action::after {
+  border: none;
+}
+
+.es-action__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.es-action__title {
+  display: block;
+  color: #33302b;
+}
+
+.es-action__description {
+  display: block;
+  margin-top: 12rpx;
+  color: #5d574c;
+}
+
+.es-action__hint {
+  flex-shrink: 0;
+  margin-left: 24rpx;
+  padding: 12rpx 24rpx;
+  border-radius: 999rpx;
+  background-color: #e7f0ed;
+  color: #0f4a44;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.es-action.is-pressed {
+  background-color: #eef4f2;
+  transform: scale(0.99);
+}
+
+.es-contrast-high .es-action {
+  border-color: #000000;
+  color: #000000;
+}
+
+.es-contrast-high .es-action__title {
+  color: #000000;
+}
+
+.es-contrast-high .es-action__description {
+  color: #262626;
+}
+
+.es-contrast-high .es-action__hint {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2rpx solid #000000;
+}
+
+.es-contrast-high .es-action.is-pressed {
+  background-color: #d9d9d9;
+}
+
+/* -----------------------------------------------------------------------------
+ * 7. Information card
+ * -------------------------------------------------------------------------- */
+.es-card {
+  box-sizing: border-box;
+  padding: 32rpx;
+  margin-bottom: 28rpx;
+  border-radius: 24rpx;
+  border: 2rpx solid;
+  background-color: #ffffff;
+}
+
+.es-contrast-high .es-card {
+  border-width: 4rpx;
+}
+
+.es-card__subtitle {
+  display: block;
+  margin-top: 8rpx;
+  color: #5d574c;
+}
+
+.es-card--note {
+  background-color: #e7f0ed;
+  border-color: #c6ded8;
+}
+
+.es-contrast-high .es-card__subtitle {
+  color: #262626;
+}
+
+.es-contrast-high .es-card--note {
+  background-color: #ffffff;
+  border-color: #000000;
+}
+
+/* -----------------------------------------------------------------------------
+ * 8. Choice group (settings)
+ * -------------------------------------------------------------------------- */
+.es-choice__options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx -8rpx 0;
+}
+
+.es-choice__option {
+  box-sizing: border-box;
+  flex: 1 1 240rpx;
+  min-width: 220rpx;
+  min-height: 104rpx;
+  margin: 0 8rpx 16rpx;
+  padding: 16rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  border: 4rpx solid #0f5c55;
+  background-color: #ffffff;
+  color: #0f4a44;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.es-choice__option.is-selected {
+  background-color: #0f5c55;
+  color: #ffffff;
+}
+
+.es-contrast-high .es-choice__option {
+  border-color: #000000;
+  color: #000000;
+}
+
+.es-contrast-high .es-choice__option.is-selected {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------------------------------
+ * 9. Large switch (settings)
+ * -------------------------------------------------------------------------- */
+.es-switch {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 112rpx;
+  padding: 16rpx 0;
+}
+
+.es-switch__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.es-switch__state {
+  flex-shrink: 0;
+  margin-left: 24rpx;
+  color: #5d574c;
+}
+
+.es-switch__track {
+  position: relative;
+  flex-shrink: 0;
+  width: 104rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+  border: 4rpx solid #5d574c;
+  background-color: #ece7de;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.es-switch__knob {
+  position: absolute;
+  top: 4rpx;
+  left: 4rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background-color: #5d574c;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.es-switch.is-on .es-switch__track {
+  background-color: #0f5c55;
+  border-color: #0f5c55;
+}
+
+.es-switch.is-on .es-switch__knob {
+  background-color: #ffffff;
+  transform: translateX(48rpx);
+}
+
+.es-contrast-high .es-switch__state {
+  color: #000000;
+}
+
+.es-contrast-high .es-switch__track {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+.es-contrast-high .es-switch__knob {
+  background-color: #000000;
+}
+
+.es-contrast-high .es-switch.is-on .es-switch__track {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.es-contrast-high .es-switch.is-on .es-switch__knob {
+  background-color: #ffffff;
+}
+
+/* -----------------------------------------------------------------------------
+ * 10. Status: loading, error and empty states
+ * -------------------------------------------------------------------------- */
+.es-status {
+  box-sizing: border-box;
+  padding: 16rpx 0 8rpx;
+  text-align: center;
+}
+
+.es-status__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20rpx;
+}
+
+.es-spinner {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  border: 8rpx solid #ded6c7;
+  border-top-color: #0f5c55;
+  animation: es-spin 1.1s linear infinite;
+}
+
+.es-status__badge {
+  box-sizing: border-box;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  border: 4rpx solid #0f5c55;
+  color: #0f5c55;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 64rpx;
+}
+
+.es-status__description {
+  display: block;
+  margin-top: 12rpx;
+  color: #5d574c;
+}
+
+.es-contrast-high .es-spinner {
+  border-color: #000000;
+  border-top-color: #000000;
+}
+
+.es-contrast-high .es-status__badge {
+  border-color: #000000;
+  color: #000000;
+}
+
+.es-contrast-high .es-status__description {
+  color: #262626;
+}
+
+@keyframes es-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 11. Confirmation dialog
+ * -------------------------------------------------------------------------- */
+.es-dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48rpx;
+  background-color: rgba(31, 28, 24, 0.55);
+}
+
+.es-dialog__panel {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 620rpx;
+  padding: 40rpx;
+  border-radius: 28rpx;
+  border: 2rpx solid #e0d8c9;
+  background-color: #ffffff;
+}
+
+.es-dialog__message {
+  display: block;
+  margin-top: 16rpx;
+  color: #5d574c;
+}
+
+.es-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32rpx -12rpx 0;
+}
+
+.es-dialog__action {
+  flex: 1 1 240rpx;
+  min-width: 220rpx;
+  margin: 12rpx;
+}
+
+.es-contrast-high .es-dialog {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.es-contrast-high .es-dialog__panel {
+  border-color: #000000;
+  border-width: 4rpx;
+}
+
+.es-contrast-high .es-dialog__message {
+  color: #262626;
+}
+
+/* -----------------------------------------------------------------------------
+ * 12. Persistent bottom navigation
+ * -------------------------------------------------------------------------- */
+.es-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  display: flex;
+  padding: 8rpx 16rpx 8rpx;
+  padding-bottom: calc(8rpx + env(safe-area-inset-bottom));
+  background-color: #ffffff;
+  border-top: 2rpx solid #e0d8c9;
+}
+
+.es-bottom-nav__item {
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 96rpx;
+  padding: 12rpx 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Two items share the width, and English labels are longer, so the label is
+     allowed to take two lines. */
+  line-height: 1.3;
+  word-break: break-word;
+  border-radius: 16rpx;
+  color: #5d574c;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.es-bottom-nav__item.is-active {
+  background-color: #e7f0ed;
+  color: #0f4a44;
+}
+
+.es-bottom-nav__item.is-pressed {
+  background-color: #eef4f2;
+}
+
+.es-contrast-high .es-bottom-nav {
+  border-top-color: #000000;
+  border-top-width: 4rpx;
+}
+
+.es-contrast-high .es-bottom-nav__item {
+  color: #000000;
+}
+
+.es-contrast-high .es-bottom-nav__item.is-active {
+  background-color: #ffffff;
+  color: #000000;
+  border: 4rpx solid #000000;
+}
+
+.es-contrast-high .es-bottom-nav__item.is-pressed {
+  background-color: #d9d9d9;
+}
+
+/* -----------------------------------------------------------------------------
+ * 13. Page header
+ * -------------------------------------------------------------------------- */
+.es-page-header {
+  margin-bottom: 32rpx;
+}
+
+.es-page-header__title {
+  display: block;
+  color: #33302b;
+}
+
+.es-page-header__subtitle {
+  display: block;
+  margin-top: 12rpx;
+  color: #5d574c;
+}
+
+.es-contrast-high .es-page-header__title {
+  color: #000000;
+}
+
+.es-contrast-high .es-page-header__subtitle {
+  color: #262626;
+}
+
+/* -----------------------------------------------------------------------------
+ * 14. Screen layout helpers
+ * -------------------------------------------------------------------------- */
+.es-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.es-page__content {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 32rpx 32rpx 240rpx;
+  padding-bottom: calc(240rpx + env(safe-area-inset-bottom));
+}
+
+.es-page__content--plain {
+  padding-bottom: 64rpx;
+}
+
+.es-page__footer {
+  box-sizing: border-box;
+  padding: 8rpx 32rpx 48rpx;
+}
+
+/* -----------------------------------------------------------------------------
+ * 15. Feature placeholder screens (shared by the four feature pages)
+ * -------------------------------------------------------------------------- */
+.es-feature__points {
+  margin-top: 24rpx;
+}
+
+.es-feature__point {
+  margin-bottom: 24rpx;
+  padding-left: 24rpx;
+  border-left: 8rpx solid #0f5c55;
+}
+
+.es-feature__point-title {
+  display: block;
+}
+
+.es-feature__point-detail {
+  display: block;
+  margin-top: 8rpx;
+}
+
+.es-feature__action {
+  margin-top: 8rpx;
+}
+
+.es-contrast-high .es-feature__point {
+  border-left-color: #000000;
+}
+
+/* -----------------------------------------------------------------------------
+ * 16. Reduced motion
+ * -------------------------------------------------------------------------- */
+.es-reduce-motion .es-btn,
+.es-reduce-motion .es-action,
+.es-reduce-motion .es-choice__option,
+.es-reduce-motion .es-switch,
+.es-reduce-motion .es-switch__track,
+.es-reduce-motion .es-switch__knob,
+.es-reduce-motion .es-bottom-nav__item {
+  transition: none;
+}
+
+.es-reduce-motion .es-btn.is-pressed,
+.es-reduce-motion .es-action.is-pressed {
+  transform: none;
+}
+
+.es-reduce-motion .es-spinner {
+  animation: none;
+  border-color: #0f5c55;
+}
+
+.es-contrast-high .es-reduce-motion .es-spinner {
+  border-color: #000000;
+}
