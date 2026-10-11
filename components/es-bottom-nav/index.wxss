@@ -1,0 +1,2 @@
+/* The bar, the active state and the type scale come from the design system. */
+@import '../../styles/theme.wxss';

@@ -1,0 +1,10 @@
+/* Colours, the spinner and the type scale come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-status__title {
+  display: block;
+}
+
+.es-status__action {
+  margin-top: 32rpx;
+}

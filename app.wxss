@@ -1,0 +1,22 @@
+/* Global application styles.
+ * The design system lives in styles/theme.wxss and is imported here, so every
+ * page starts with the accessibility classes available. */
+
+@import 'styles/theme.wxss';
+
+page {
+  background-color: #f7f3ec;
+  color: #33302b;
+  font-size: 36rpx;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text,
+button,
+input,
+textarea,
+label {
+  box-sizing: border-box;
+}

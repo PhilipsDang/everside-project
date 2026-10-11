@@ -1,0 +1,2 @@
+/* The dialog surface, the buttons and the type scale come from the design system. */
+@import '../../styles/theme.wxss';

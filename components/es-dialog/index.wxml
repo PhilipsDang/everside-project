@@ -1,0 +1,14 @@
+<view wx:if="{{visible}}" class="es-dialog" catchtouchmove="noop">
+  <view class="es-dialog__panel">
+    <text class="es-text-heading es-dialog__title" aria-role="heading">{{title}}</text>
+    <text class="es-text-body es-dialog__message">{{message}}</text>
+    <view class="es-dialog__actions">
+      <view class="es-dialog__action">
+        <es-secondary-button text="{{labels.cancel}}" bind:submit="onCancel" />
+      </view>
+      <view class="es-dialog__action">
+        <es-primary-button text="{{labels.confirm}}" bind:submit="onConfirm" />
+      </view>
+    </view>
+  </view>
+</view>

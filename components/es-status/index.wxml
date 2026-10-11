@@ -1,0 +1,11 @@
+<view class="es-status" aria-live="polite">
+  <view class="es-status__mark" aria-hidden="true">
+    <view wx:if="{{type === 'loading'}}" class="es-spinner"></view>
+    <view wx:elif="{{type === 'error'}}" class="es-status__badge">!</view>
+  </view>
+  <text class="es-text-heading es-status__title" aria-role="heading">{{copy.title}}</text>
+  <text class="es-text-body es-status__description">{{copy.description}}</text>
+  <view wx:if="{{actionText}}" class="es-status__action">
+    <es-primary-button text="{{actionText}}" bind:submit="onActionTap" />
+  </view>
+</view>

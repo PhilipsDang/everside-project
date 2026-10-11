@@ -1,0 +1,2 @@
+/* Card colours, borders and type sizes come from the shared design system. */
+@import '../../styles/theme.wxss';

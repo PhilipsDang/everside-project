@@ -1,0 +1,18 @@
+/* The track, the knob and the type scale come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-switch__description {
+  display: block;
+  margin-top: 8rpx;
+}
+
+.es-switch.is-pressed {
+  background-color: #eef4f2;
+  border-radius: 16rpx;
+}
+
+.es-contrast-high .es-switch.is-pressed {
+  background-color: #ffffff;
+  border: 4rpx solid #000000;
+  border-radius: 16rpx;
+}
