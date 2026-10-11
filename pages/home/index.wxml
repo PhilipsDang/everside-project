@@ -1,0 +1,30 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content">
+    <es-page-header title="{{copy.greeting}}" subtitle="{{copy.subtitle}}" />
+
+    <view class="es-home__list">
+      <button
+        wx:for="{{actions}}"
+        wx:key="id"
+        class="es-action"
+        data-route="{{item.route}}"
+        hover-class="is-pressed"
+        hover-start-time="20"
+        hover-stay-time="100"
+        aria-role="button"
+        aria-label="{{item.ariaLabel}}"
+        bind:tap="onActionTap"
+      >
+        <view class="es-action__body">
+          <text class="es-text-heading es-action__title" style="width: 133rpx; display: block; box-sizing: border-box">{{item.title}}</text>
+          <text class="es-text-body es-action__description">{{item.description}}</text>
+        </view>
+        <text class="es-action__hint">{{copy.openLabel}}</text>
+      </button>
+    </view>
+
+    <text class="es-text-note es-text-muted es-home__note">{{copy.note}}</text>
+  </view>
+
+  <es-bottom-nav active="home" />
+</view>

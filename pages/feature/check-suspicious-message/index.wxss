@@ -1,0 +1,39 @@
+@import '../../../styles/theme.wxss';
+
+.es-fraud-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 260rpx;
+  margin-top: 24rpx;
+  padding: 24rpx;
+}
+
+.es-example {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.es-example__title,
+.es-example__message {
+  display: block;
+}
+
+.es-example__message {
+  margin-top: 8rpx;
+}
+
+.es-screenshot {
+  margin-top: 24rpx;
+}
+
+.es-screenshot__image {
+  display: block;
+  width: 100%;
+  height: 360rpx;
+}
+
+.es-screenshot__remove,
+.es-fraud-action {
+  margin-top: 20rpx;
+}

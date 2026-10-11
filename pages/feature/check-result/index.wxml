@@ -1,0 +1,70 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content">
+    <es-page-header title="{{copy.result.title}}" subtitle="{{copy.result.subtitle}}" />
+
+    <view wx:if="{{!hasResult}}">
+      <es-status
+        type="empty"
+        title="{{copy.result.missingTitle}}"
+        description="{{copy.result.missingBody}}"
+        action-text="{{copy.result.backToCheck}}"
+        bind:action="onCheckAnother"
+      />
+    </view>
+
+    <view wx:else>
+      <view class="es-result__demo es-brand-soft">
+        <text class="es-text-note">{{copy.result.demoBadge}}</text>
+      </view>
+
+      <es-card title="{{copy.result.riskTitle}}">
+        <view class="{{riskClass}}" aria-live="polite">
+          <text class="es-text-title">{{riskLabel}}</text>
+        </view>
+      </es-card>
+
+      <es-card title="{{copy.result.summaryTitle}}">
+        <text class="es-text-body">{{summary}}</text>
+      </es-card>
+
+      <es-card wx:if="{{imageOnly}}" title="{{copy.result.imageOnlyTitle}}" tone="note">
+        <text class="es-text-body">{{copy.result.imageOnlyBody}}</text>
+      </es-card>
+
+      <es-card wx:if="{{sensitiveDetected}}" title="{{copy.result.sensitiveTitle}}" tone="note">
+        <text class="es-text-body">{{copy.result.sensitiveBody}}</text>
+      </es-card>
+
+      <es-card title="{{copy.result.warningSignsTitle}}">
+        <view wx:if="{{warningSigns.length}}">
+          <view wx:for="{{warningSigns}}" wx:key="*this" class="es-result-list__item">
+            <text class="es-result-list__mark es-text-heading">!</text>
+            <text class="es-result-list__text es-text-body">{{item}}</text>
+          </view>
+        </view>
+        <text wx:else class="es-text-body">{{copy.result.noWarningSigns}}</text>
+      </es-card>
+
+      <es-card title="{{copy.result.actionsTitle}}">
+        <view wx:for="{{actions}}" wx:key="*this" class="es-result-list__item">
+          <text class="es-result-list__number es-text-heading">{{index + 1}}</text>
+          <text class="es-result-list__text es-text-body">{{item}}</text>
+        </view>
+      </es-card>
+
+      <es-card title="{{copy.result.disclaimerTitle}}" tone="note">
+        <text class="es-text-body">{{copy.result.disclaimerBody}}</text>
+      </es-card>
+
+      <view class="es-result__action">
+        <es-secondary-button text="{{copy.result.checkAnother}}" bind:submit="onCheckAnother" />
+      </view>
+      <view class="es-result__action">
+        <es-primary-button text="{{copy.result.returnHome}}" bind:submit="onHome" />
+      </view>
+    </view>
+  </view>
+
+  <es-bottom-nav active="none" />
+</view>
+

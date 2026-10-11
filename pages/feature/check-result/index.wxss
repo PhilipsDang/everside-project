@@ -1,0 +1,29 @@
+@import '../../../styles/theme.wxss';
+
+.es-result__demo {
+  display: inline-flex;
+  margin-bottom: 24rpx;
+  padding: 12rpx 20rpx;
+}
+
+.es-result-list__item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20rpx;
+}
+
+.es-result-list__mark,
+.es-result-list__number {
+  flex: 0 0 56rpx;
+  text-align: center;
+}
+
+.es-result-list__text {
+  flex: 1;
+  min-width: 0;
+  margin-left: 16rpx;
+}
+
+.es-result__action {
+  margin-top: 20rpx;
+}

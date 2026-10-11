@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "es-bottom-nav": "../../components/es-bottom-nav/index",
+    "es-card": "../../components/es-card/index",
+    "es-page-header": "../../components/es-page-header/index",
+    "es-primary-button": "../../components/es-primary-button/index",
+    "es-secondary-button": "../../components/es-secondary-button/index",
+    "es-status": "../../components/es-status/index"
+  }
+}

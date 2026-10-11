@@ -1,0 +1,44 @@
+<!--
+  Shared layout of the four feature placeholder screens.
+
+  Each of the four features has its own page, its own route and its own
+  navigation bar title; they all render this template so the wording, the
+  Back button and the way back Home stay exactly the same.
+
+  The `view` object passed in must match FeaturePlaceholderView in types/index.ts.
+-->
+<template name="featurePlaceholder">
+  <view class="es-page es-root {{a11yClass}}">
+    <view class="es-page__content">
+      <es-page-header title="{{title}}" subtitle="{{subtitle}}" />
+
+      <es-card title="{{pointsTitle}}">
+        <text class="es-text-body">{{intro}}</text>
+        <view class="es-feature__points">
+          <view wx:for="{{points}}" wx:key="title" class="es-feature__point">
+            <text class="es-text-heading es-feature__point-title">{{item.title}}</text>
+            <text class="es-text-body es-text-secondary es-feature__point-detail">{{item.detail}}</text>
+          </view>
+        </view>
+      </es-card>
+
+      <es-card>
+        <es-status type="empty" title="{{comingSoonTitle}}" description="{{comingSoonBody}}" />
+      </es-card>
+
+      <es-card title="{{todayTipTitle}}" tone="note">
+        <text class="es-text-body">{{todayTip}}</text>
+      </es-card>
+
+      <view class="es-feature__action">
+        <es-primary-button
+          text="{{backLabel}}"
+          aria-label="{{backAriaLabel}}"
+          bind:submit="onBackTap"
+        />
+      </view>
+    </view>
+
+    <es-bottom-nav active="none" />
+  </view>
+</template>

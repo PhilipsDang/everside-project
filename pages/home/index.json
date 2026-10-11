@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "es-bottom-nav": "../../components/es-bottom-nav/index",
+    "es-page-header": "../../components/es-page-header/index"
+  }
+}

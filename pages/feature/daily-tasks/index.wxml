@@ -1,0 +1,3 @@
+<import src="../../../templates/feature-placeholder.wxml" />
+
+<template is="featurePlaceholder" data="{{view}}" />

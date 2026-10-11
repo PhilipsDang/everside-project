@@ -1,0 +1,83 @@
+<view class="es-page es-root {{a11yClass}}">
+  <view class="es-page__content">
+    <es-page-header title="{{copy.input.title}}" subtitle="{{copy.input.subtitle}}" />
+
+    <es-card title="{{copy.input.demoTitle}}" tone="note">
+      <text class="es-text-body">{{copy.input.demoBody}}</text>
+    </es-card>
+
+    <es-card title="{{copy.input.messageTitle}}" subtitle="{{copy.input.messageHint}}">
+      <textarea
+        class="es-fraud-input es-surface es-text-body"
+        value="{{messageText}}"
+        placeholder="{{copy.input.messagePlaceholder}}"
+        aria-label="{{copy.input.messageAriaLabel}}"
+        maxlength="2000"
+        auto-height
+        bindinput="onMessageInput"
+      />
+    </es-card>
+
+    <es-card title="{{copy.input.examplesTitle}}" subtitle="{{copy.input.examplesHint}}">
+      <button
+        wx:for="{{examples}}"
+        wx:key="id"
+        class="es-example"
+        data-id="{{item.id}}"
+        hover-class="is-pressed"
+        aria-role="button"
+        aria-label="{{item.ariaLabel}}"
+        bind:tap="onExampleTap"
+      >
+        <text class="es-text-heading es-example__title">{{item.label}}</text>
+        <text class="es-text-note es-example__message">{{item.message}}</text>
+      </button>
+    </es-card>
+
+    <es-card title="{{copy.input.screenshotTitle}}" subtitle="{{copy.input.screenshotHint}}">
+      <es-secondary-button text="{{copy.input.chooseScreenshot}}" bind:submit="onChooseScreenshot" />
+      <view wx:if="{{screenshotPath}}" class="es-screenshot">
+        <image
+          class="es-screenshot__image"
+          src="{{screenshotPath}}"
+          mode="aspectFit"
+          aria-role="img"
+          aria-label="{{copy.input.screenshotAriaLabel}}"
+          bind:tap="onPreviewScreenshot"
+        />
+        <view class="es-screenshot__remove">
+          <es-secondary-button
+            text="{{copy.input.removeScreenshot}}"
+            bind:submit="onRemoveScreenshot"
+          />
+        </view>
+      </view>
+    </es-card>
+
+    <es-card wx:if="{{validationVisible}}" title="{{copy.input.emptyTitle}}" tone="note">
+      <text class="es-text-body">{{copy.input.emptyBody}}</text>
+    </es-card>
+
+    <view wx:if="{{messageText || screenshotPath}}" class="es-fraud-action">
+      <es-secondary-button text="{{copy.input.clearLabel}}" bind:submit="onClear" />
+    </view>
+    <view class="es-fraud-action">
+      <es-primary-button
+        text="{{copy.input.analyzeLabel}}"
+        bind:submit="onAnalyze"
+      />
+    </view>
+  </view>
+
+  <es-bottom-nav active="none" />
+
+  <es-dialog
+    visible="{{sensitiveDialogVisible}}"
+    title="{{copy.input.sensitiveDialogTitle}}"
+    message="{{copy.input.sensitiveDialogBody}}"
+    confirm-text="{{copy.input.sensitiveDialogConfirm}}"
+    cancel-text="{{copy.input.sensitiveDialogCancel}}"
+    bind:confirm="onSensitiveConfirm"
+    bind:cancel="onSensitiveCancel"
+  />
+</view>

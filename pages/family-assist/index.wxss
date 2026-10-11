@@ -1,0 +1,6 @@
+/* Type sizes and colours come from the shared design system. */
+@import '../../styles/theme.wxss';
+
+.es-family-assist__action {
+  margin-bottom: 24rpx;
+}

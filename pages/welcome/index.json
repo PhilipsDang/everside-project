@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "es-card": "../../components/es-card/index",
+    "es-choice": "../../components/es-choice/index",
+    "es-primary-button": "../../components/es-primary-button/index",
+    "es-secondary-button": "../../components/es-secondary-button/index"
+  }
+}
